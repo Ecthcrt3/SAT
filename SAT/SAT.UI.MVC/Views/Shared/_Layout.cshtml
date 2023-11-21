@@ -29,7 +29,7 @@
     <link href="~/css/responsive.css" rel="stylesheet" />
 </head>
 
-<body>
+<body class="sub_page">
     <div class="hero_area">
         <!-- header section strats -->
         <header class="header_section">
@@ -51,7 +51,7 @@
                                     <a class="nav-link" href=@Url.Action("Index","Home")>Home <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href=@Url.Action("Index", "Contact")> Contact </a>
+                                    <a class="nav-link" href=@Url.Action("Contact", "Home")> Contact </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href=@Url.Action("Index", "Courses")> Courses </a>
@@ -62,12 +62,6 @@
                             </ul>
                             <div class="user_option">
                                 <partial name="_LoginPartial" />
-@*                                <a href=@Url.Action("")>
-                                    <img src="images/user.png" alt="">
-                                </a>*@
-                                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
-                                    <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-                                </form>
                             </div>
                         </div>
                     </div>
@@ -76,103 +70,10 @@
         </header>
         <!-- end header section -->
         <!-- slider section -->
-        <section class=" slider_section position-relative">
-            <div class="container">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="detail-box">
-                                        <div>
-                                            <h2>
-                                                welcome to
-
-                                            </h2>
-                                            <h1>
-                                                web agency
-                                            </h1>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                                labore
-                                            </p>
-                                            <div class="">
-                                                <a href="">
-                                                    Contact us
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="detail-box">
-                                        <div>
-                                            <h2>
-                                                welcome to
-
-                                            </h2>
-                                            <h1>
-                                                web agency
-                                            </h1>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                                labore
-                                            </p>
-                                            <div class="">
-                                                <a href="">
-                                                    Contact us
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="detail-box">
-                                        <div>
-                                            <h2>
-                                                welcome to
-
-                                            </h2>
-                                            <h1>
-                                                web agency
-                                            </h1>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                                labore
-                                            </p>
-                                            <div class="">
-                                                <a href="">
-                                                    Contact us
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        <!-- end slider section -->
+    @RenderSection("hero", required:false)
     </div>
 
-
-    @RenderBody()
+        @RenderBody()
 
 
     <!-- footer section -->
@@ -189,7 +90,7 @@
     <script type="text/javascript" src="~/js/bootstrap.js"></script>
     
    
-    @await RenderSectionAsync("scripts", required: false);
+    @await RenderSectionAsync("scripts", required: false)
 </body>
 
 </html>
