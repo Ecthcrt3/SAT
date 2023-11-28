@@ -14,10 +14,28 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  padding-bottom: 60px;
 }
 
 .btn-outline-light:hover {
     background-color: rgba(128, 128, 128,.5);
     color: white;
+}
+
+.move-right {
+    position: relative;
+    top: 10px;
+    right: -70px;
+}
+
+.move-left {
+    position: relative;
+    right: 50px;
+}
+
+.footer_section {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
 }
