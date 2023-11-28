@@ -16,3 +16,8 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.btn-outline-light:hover {
+    background-color: rgba(128, 128, 128,.5);
+    color: white;
+}
