@@ -26,6 +26,13 @@ namespace SAT.UI.MVC.Controllers
                           Problem("Entity set 'SATContext.Courses'  is null.");
         }
 
+        public async Task<IActionResult> TiledCourses()
+        {
+            return _context.Courses != null ?
+                         View(await _context.Courses.ToListAsync()) :
+                         Problem("Entity set 'SATContext.Courses'  is null.");
+        }
+
         // GET: Courses/Details/5
         public async Task<IActionResult> Details(int? id)
         {

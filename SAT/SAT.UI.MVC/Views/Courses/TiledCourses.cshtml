@@ -1,0 +1,38 @@
+﻿@model IEnumerable<SAT.DATA.EF.Models.Course>
+
+@{
+    ViewData["Title"] = "Courses";
+}
+
+<div class="container">
+    <h1 class="text-center">Courses</h1>
+
+    @if (User.IsInRole("Admin"))
+    {
+        <a class="btn btn-dark" asp-action="Create">Create New Course</a>
+    }
+
+    <div class="row">
+    @foreach(var item in Model)
+    {
+       <div class="container col-md-4 course-card">
+           <h3>@Html.DisplayFor(modelItem => item.CourseName)</h3>
+
+                <span>Credit Hours: @Html.DisplayFor(modelItem => item.CreditHours)</span>
+
+                <p>@Html.DisplayFor(modelItem => item.CourseDescription)</p>
+
+                <p>@Html.DisplayFor(modelItem => item.Curriculum)</p>
+
+                <p>@Html.DisplayFor(modelItem => item.Notes)</p>
+
+                <div>
+                    <a class="btn btn-dark" asp-action="Edit">Edit Course</a>
+                    <a class="btn btn-danger" asp-action="Delete">Delete Course</a>
+                </div>
+
+       </div>
+    }
+    </div>
+
+</div>
