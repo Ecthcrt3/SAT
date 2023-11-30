@@ -4,35 +4,54 @@
     ViewData["Title"] = "Courses";
 }
 
-<div class="container">
-    <h1 class="text-center">Courses</h1>
+<section class="contact_section layout_padding">
 
-    @if (User.IsInRole("Admin"))
-    {
-        <a class="btn btn-dark" asp-action="Create">Create New Course</a>
-    }
+    <div class="heading_container my-4">
+        <h2>
+            Courses
+        </h2>
+        @if (User.IsInRole("Admin"))
+        {
 
-    <div class="row">
-    @foreach(var item in Model)
-    {
-       <div class="container col-md-4 course-card">
-           <h3>@Html.DisplayFor(modelItem => item.CourseName)</h3>
+            <a class="btn btn-dark" asp-action="Create">Create New</a>
+        }
+            <a class="btn btn-dark" asp-action="Index">Table View</a>
 
-                <span>Credit Hours: @Html.DisplayFor(modelItem => item.CreditHours)</span>
-
-                <p>@Html.DisplayFor(modelItem => item.CourseDescription)</p>
-
-                <p>@Html.DisplayFor(modelItem => item.Curriculum)</p>
-
-                <p>@Html.DisplayFor(modelItem => item.Notes)</p>
-
-                <div>
-                    <a class="btn btn-dark" asp-action="Edit">Edit Course</a>
-                    <a class="btn btn-danger" asp-action="Delete">Delete Course</a>
-                </div>
-
-       </div>
-    }
     </div>
+    <div class="">
+        <div class="px-5">
+            <div class="row justify-content-center">
+                @foreach (var item in Model)
+                {
+                    <div class="container col-md-3 course-card bg-dark text-center rounded text-light m-3 p-2">
+                        <a class="text-decoration-none text-light" asp-action="Index" asp-controller="ScheduledClasses">
+                            <div class="border border-light rounded mb-2">
+                                <h3>@Html.DisplayFor(modelItem => item.CourseName)</h3>
 
-</div>
+                                <span>Credit Hours: @Html.DisplayFor(modelItem => item.CreditHours)</span>
+
+                                <p>@Html.DisplayFor(modelItem => item.CourseDescription)</p>
+
+                                <p>@Html.DisplayFor(modelItem => item.Curriculum)</p>
+
+                                <p>@Html.DisplayFor(modelItem => item.Notes)</p>
+                            </div>
+                        </a>
+                        <div>
+                            @if (User.IsInRole("Admin"))
+                            {
+                            <a class="btn btn-outline-light" asp-action="Edit" asp-route-id="@item.CourseId">Edit</a>
+                            <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.CourseId">Delete</a>
+                            }
+                        </div>
+
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+

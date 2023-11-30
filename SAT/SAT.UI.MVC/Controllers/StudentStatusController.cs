@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -43,7 +44,7 @@ namespace SAT.UI.MVC.Controllers
 
             return View(studentStatus);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: StudentStatus/Create
         public IActionResult Create()
         {
@@ -65,7 +66,7 @@ namespace SAT.UI.MVC.Controllers
             }
             return View(studentStatus);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: StudentStatus/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -116,7 +117,7 @@ namespace SAT.UI.MVC.Controllers
             }
             return View(studentStatus);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: StudentStatus/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {

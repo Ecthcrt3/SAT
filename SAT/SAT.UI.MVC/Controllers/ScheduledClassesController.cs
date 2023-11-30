@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -44,7 +45,7 @@ namespace SAT.UI.MVC.Controllers
 
             return View(scheduledClass);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: ScheduledClasses/Create
         public IActionResult Create()
         {
@@ -70,7 +71,7 @@ namespace SAT.UI.MVC.Controllers
             ViewData["Scsid"] = new SelectList(_context.ScheduledClassStatuses, "Scsid", "Scsname", scheduledClass.Scsid);
             return View(scheduledClass);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: ScheduledClasses/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -125,7 +126,7 @@ namespace SAT.UI.MVC.Controllers
             ViewData["Scsid"] = new SelectList(_context.ScheduledClassStatuses, "Scsid", "Scsname", scheduledClass.Scsid);
             return View(scheduledClass);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: ScheduledClasses/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
