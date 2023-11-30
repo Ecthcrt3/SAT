@@ -14,6 +14,17 @@
                     <li class="dropdown-item">
                         <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
                     </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="text-dark nav-link" href="@Url.Action("ListUsers", "Administration")">Users</a></li>
+                    <li><a class="text-dark nav-link" href="@Url.Action("ListRoles", "Administration")">Roles</a></li>
+                    <li>
+                    <a class="nav-link text-dark" asp-action="index" asp-controller="StudentStatus">Student Statuses</a>
+                    </li>
+                    <li>
+                    <a class="nav-link text-dark" asp-action="index" asp-controller="ScheduledClassStatus">Scheduled Class Statuses</a>
+                    </li>
+
+                    <li><hr class="dropdown-divider" /></li>
                     <li class="dropdown-item">
                         <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
                             <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
