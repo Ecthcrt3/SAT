@@ -12,10 +12,13 @@ namespace SAT.DATA.EF.Models/*.Metadata*/
         public int CourseId { get; set; }
         [Required]
         [StringLength(50)]
+        [Display(Name ="Name")]
         public string CourseName { get; set; } = null!;
         [Required]
+        [Display(Name = "Description")]
         public string CourseDescription { get; set; } = null!;
         [Required]
+        [Display(Name = "Credit Hours")]
         [Range(0, 255, ErrorMessage ="Cannot exceed 255")]
         public byte CreditHours { get; set; }
         [StringLength(250)]
@@ -23,6 +26,7 @@ namespace SAT.DATA.EF.Models/*.Metadata*/
         [StringLength(500)]
         public string? Notes { get; set; }
         [Required]
+        [Display(Name = "Active")]
         public bool IsActive { get; set; }
 
     }
@@ -70,9 +74,11 @@ namespace SAT.DATA.EF.Models/*.Metadata*/
         public int StudentId { get; set; }
         [Required]
         [StringLength(20)]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; } = null!;
         [Required]
         [StringLength(20)]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; } = null!;
         [StringLength(15)]
         public string? Major { get; set; }
