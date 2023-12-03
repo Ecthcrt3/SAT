@@ -7,9 +7,9 @@
 <section class="contact_section layout_padding">
 
     <div class="heading_container my-4">
-        @* <h2>
-            @Model.FirstName @Model.LastName
-        </h2> *@
+        <h2>
+            @Model.ScheduledClassId
+        </h2>
 
     </div>
     <div class="">
@@ -50,7 +50,7 @@
                             <span asp-validation-for="Scsid" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <a class="btn btn-dark" asp-action="Index">Back to List</a>
+                            <a class="btn btn-dark" asp-action="Index">Cancel</a>
                         </div>
                     </form>
                 </div>
@@ -58,6 +58,8 @@
         </div>
     </div>
 </section>
+
+
 
 
 @section Scripts {

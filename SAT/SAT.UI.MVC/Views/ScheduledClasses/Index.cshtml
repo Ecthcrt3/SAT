@@ -19,7 +19,7 @@
     </div>
     <div class="">
         <div class="px-5">
-            <table class="table">
+            <table class="table table-dark text-center">
                 <thead>
                     <tr>
                         <th>
@@ -66,8 +66,8 @@
                                 @Html.DisplayFor(modelItem => item.Scs.Scsname)
                             </td>
                             <td>
-                                <a class="btn btn-dark" asp-action="Edit" asp-route-id="@item.ScheduledClassId">Edit</a> |
-                                <a class="btn btn-dark" asp-action="Details" asp-route-id="@item.ScheduledClassId">Details</a> |
+                                <a class="btn btn-dark" asp-action="Edit" asp-route-id="@item.ScheduledClassId">Edit</a>
+                                <a class="btn btn-dark" asp-action="Details" asp-route-id="@item.ScheduledClassId">Details</a>
                                 <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ScheduledClassId">Delete</a>
                             </td>
                         </tr>
@@ -77,6 +77,9 @@
         </div>
     </div>
 </section>
+
+
+
 
 
 

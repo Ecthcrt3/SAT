@@ -4,38 +4,54 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<section class="contact_section layout_padding">
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Ssname)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ssdescription)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ssname)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ssdescription)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Ssid">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Ssid">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Ssid">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <div class="heading_container my-4">
+        <h2>
+            Student Status
+        </h2>
+        @if (User.IsInRole("Admin"))
+        {
+
+            <a asp-action="Create" class="btn btn-dark">Create New</a>
+        }
+
+    </div>
+    <div class="">
+        <div class="px-5">
+            <table class="table table-dark text-center">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Ssname)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Ssdescription)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Ssname)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Ssdescription)
+                            </td>
+                            <td>
+                                <a class="btn btn-outline-light" asp-action="Edit" asp-route-id="@item.Ssid">Edit</a> 
+                                <a class="btn btn-outline-light" asp-action="Details" asp-route-id="@item.Ssid">Details</a> 
+                                <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.Ssid">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+
