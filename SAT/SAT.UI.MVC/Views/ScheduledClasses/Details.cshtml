@@ -7,9 +7,9 @@
 <section class="contact_section layout_padding">
 
     <div class="heading_container my-4">
-        @* <h2>
-            @Model.FirstName @Model.LastName
-        </h2> *@
+        <h2>
+            @Model.ScheduledClassId
+        </h2>
 
     </div>
     <div class="">
@@ -59,13 +59,14 @@
                         </dl>
                     </div>
                     <div>
-                        <a class="btn btn-dark" asp-action="Edit" asp-route-id="@Model.ScheduledClassId">Edit</a> 
+                        <a class="btn btn-dark" asp-action="Edit" asp-route-id="@Model.ScheduledClassId">Edit</a>
                         <a class="btn btn-dark" asp-action="Index">Cancel</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
 </section>
+
+
 

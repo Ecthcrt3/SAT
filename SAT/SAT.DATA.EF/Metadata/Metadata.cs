@@ -28,7 +28,6 @@ namespace SAT.DATA.EF.Models/*.Metadata*/
         [Required]
         [Display(Name = "Active")]
         public bool IsActive { get; set; }
-
     }
 
     public class EnrollmentMetada
