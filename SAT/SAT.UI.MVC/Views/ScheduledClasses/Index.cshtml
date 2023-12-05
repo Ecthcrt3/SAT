@@ -1,19 +1,19 @@
 ﻿@model IEnumerable<SAT.DATA.EF.Models.ScheduledClass>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Sheduled Classes";
 }
 
 <section class="contact_section layout_padding">
 
     <div class="heading_container my-4">
         <h2>
-            Students
+            Scheduled Classes
         </h2>
         @if (User.IsInRole("Admin"))
         {
 
-            <a asp-action="Create" class="btn btn-dark">Create New Student</a>
+            <a asp-action="Create" class="btn btn-dark">Schedule New Class</a>
         }
 
     </div>
@@ -22,22 +22,22 @@
             <table class="table table-dark text-center">
                 <thead>
                     <tr>
-                        <th>
+                        <th class="text-center">
                             @Html.DisplayNameFor(model => model.StartDate)
                         </th>
-                        <th>
+                        <th class="text-center">
                             @Html.DisplayNameFor(model => model.EndDate)
                         </th>
-                        <th>
+                        <th class="text-center">
                             @Html.DisplayNameFor(model => model.InstructorName)
                         </th>
-                        <th>
+                        <th class="text-center">
                             @Html.DisplayNameFor(model => model.Location)
                         </th>
-                        <th>
+                        <th class="text-center">
                             @Html.DisplayNameFor(model => model.Course)
                         </th>
-                        <th>
+                        <th class="text-center">
                             @Html.DisplayNameFor(model => model.Scs)
                         </th>
                         <th></th>
@@ -66,9 +66,9 @@
                                 @Html.DisplayFor(modelItem => item.Scs.Scsname)
                             </td>
                             <td>
-                                <a class="btn btn-dark" asp-action="Edit" asp-route-id="@item.ScheduledClassId">Edit</a>
-                                <a class="btn btn-dark" asp-action="Details" asp-route-id="@item.ScheduledClassId">Details</a>
-                                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ScheduledClassId">Delete</a>
+                                <a class="btn btn-outline-light" asp-action="Edit" asp-route-id="@item.ScheduledClassId">Edit</a>
+                                <a class="btn btn-outline-light" asp-action="Details" asp-route-id="@item.ScheduledClassId">Details</a>
+                                <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.ScheduledClassId">Delete</a>
                             </td>
                         </tr>
                     }

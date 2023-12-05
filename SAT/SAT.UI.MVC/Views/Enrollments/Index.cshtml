@@ -1,27 +1,37 @@
 ﻿@model IEnumerable<SAT.DATA.EF.Models.Enrollment>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Enrollments";
 }
 
-<h1>Index</h1>
+<section class="contact_section layout_padding">
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+    <div class="heading_container my-4">
+        <h2>
+            Enrollments
+        </h2>
+        @if (User.IsInRole("Admin"))
+        {
+
+            <a asp-action="Create" class="btn btn-dark">Create New Enrollment</a>
+        }
+
+    </div>
+    <div class="">
+        <div class="px-5">
+            <table class="table table-dark text-center">
     <thead>
         <tr>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.EnrollmentDate)
             </th>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.ScheduledClass)
             </th>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Student)
             </th>
-            <th></th>
+            <th class="text-center">Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -37,13 +47,17 @@
                 @Html.DisplayFor(modelItem => item.Student.Email)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.EnrollmentId">Edit</a> 
-                <a asp-action="Details" asp-route-id="@item.EnrollmentId">Details</a>
-                <a asp-action="Delete" asp-route-id="@item.EnrollmentId">Delete</a>
+                <a class="btn btn-outline-light" asp-action="Edit" asp-route-id="@item.EnrollmentId">Edit</a> 
+                <a class="btn btn-outline-light" asp-action="Details" asp-route-id="@item.EnrollmentId">Details</a>
+                <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.EnrollmentId">Delete</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+        </div>
+    </div>
+</section>
+
 
 
